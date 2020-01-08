@@ -77,4 +77,7 @@ export class DashboardComponent implements OnInit {
     this.totalResult = this.filterProfiles.length;
   }
  
+  giveRating = function(index, event){  
+    this.filterProfiles[index].rating = event;
+  }
 }

@@ -31,17 +31,17 @@
                                     <div class="rating-block">
                                         <span *ngIf="profile.rating">{{profile.rating}} Rating</span>
                                         <div class="star-rating">
-                                                <fieldset class="rating" disabled>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="5" [checked]="profile.rating==='5'"/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="4.5" [checked]="profile.rating==='4.5'"/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="4" [checked]="profile.rating==='4'" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="3.5" [checked]="profile.rating==='3.5'" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="3"  [checked]="profile.rating==='3'" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="2.5" [checked]="profile.rating==='2.5'" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="2" [checked]="profile.rating==='2'" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="1.5" [checked]="profile.rating==='1.5'" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                        <input type="radio"  name="rating_{{i}}" [value]="1" [checked]="profile.rating==='1'" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                                                        <input type="radio"   name="rating_{{i}}" [value]="0.5" [checked]="profile.rating==='0.5'" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                <fieldset class="rating" >
+                                                        <input type="radio"   name="rating_{{i}}" [value]="5" [checked]="profile.rating==='5'"  (ngModel) = "profile.rating" /><label class = "full" for="star5" title="Awesome - 5 stars" (click)="giveRating(i,'5')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="4.5" [checked]="profile.rating==='4.5'"   (ngModel) = "profile.rating" /><label class="half" for="star4half" title="Pretty good - 4.5 stars" (click)="giveRating(i,'4.5')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="4" [checked]="profile.rating==='4'"    (ngModel) = "profile.rating" /><label class = "full" for="star4" title="Pretty good - 4 stars" (click)="giveRating(i,'4')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="3.5" [checked]="profile.rating==='3.5'"    (ngModel) = "profile.rating" /><label class="half" for="star3half" title="Meh - 3.5 stars" (click)="giveRating(i,'3.5')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="3"  [checked]="profile.rating==='3'"    (ngModel) = "profile.rating" /><label class = "full" for="star3" title="Meh - 3 stars" (click)="giveRating(i,'3')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="2.5" [checked]="profile.rating==='2.5'"    (ngModel) = "profile.rating" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars" (click)="giveRating(i,'2.5')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="2" [checked]="profile.rating==='2'"    (ngModel) = "profile.rating" /><label class = "full" for="star2" title="Kinda bad - 2 stars" (click)="giveRating(i,'2')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="1.5" [checked]="profile.rating==='1.5'"    (ngModel) = "profile.rating" /><label class="half" for="star1half" title="Meh - 1.5 stars" (click)="giveRating(i,'1.5')" ></label>
+                                                        <input type="radio"  name="rating_{{i}}" [value]="1" [checked]="profile.rating==='1'"    (ngModel) = "profile.rating" /><label class = "full" for="star1" title="Sucks big time - 1 star" (click)="giveRating(i,'1')" ></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="0.5" [checked]="profile.rating==='0.5'"  (ngModel) = "profile.rating" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars" (click)="giveRating(i,'0.5')" ></label>
                                                     </fieldset>
                                         </div>
                                     </div>

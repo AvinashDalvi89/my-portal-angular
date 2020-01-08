@@ -179,7 +179,7 @@ export const appConstants = {
             "rollType" : "Part Time"
           },
           {
-            "name" : "Sidhu Murgan",
+            "name" : "Trupti Dhamal",
             "title" : "Business Analyst",
             "rating" : "3.5",
             "experience" : 3,

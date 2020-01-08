@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class HeaderComponent implements OnInit {
   
   teamList;
-  chooseTeam;
+  chooseTeam = null;
 
   @Output() applyFilter = new EventEmitter<string>();
   constructor() { }
@@ -24,9 +24,17 @@ export class HeaderComponent implements OnInit {
   }
 
   callParentFilter(){ 
-    let filterValues = {
-      'filterTeam' : this.chooseTeam
+    let filterValues = {};
+    if(this.chooseTeam == null){
+      filterValues = {
+        'filterTeam' : ''
+      }
+    }else{
+      filterValues = {
+        'filterTeam' : this.chooseTeam
+      }
     }
+    
     this.applyFilter.next(JSON.stringify(filterValues));
   }
 

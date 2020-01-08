@@ -10,6 +10,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { FilterPipe } from './shared/services/filter.pipe';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
  
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     SideNavigationComponent,
     MessagesComponent,
     MyAccountComponent,
-    FilterPipe
+    FilterPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, Output, EventEmitter} from '@angular/core';
 import {appConstants} from './../../../app.constants';
 import { FormControl, FormsModule, FormGroup, FormArray, FormBuilder  } from '@angular/forms';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-side-navigation',
@@ -24,7 +25,9 @@ export class SideNavigationComponent implements OnInit {
   @Output() someEvent = new EventEmitter<string>();
   @Output() applySideFilter = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.filterForm = new FormGroup({  
@@ -86,5 +89,9 @@ export class SideNavigationComponent implements OnInit {
     
     this.applySideFilter.next(JSON.stringify(filterValues));
   }
-
+  
+  logout() {
+    localStorage.removeItem('myportal.avinashdalvi.com');
+    this.router.navigate(['/login']);
+  }
 }
