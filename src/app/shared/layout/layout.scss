@@ -1,0 +1,39 @@
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+// Font Variables
+$body-font:'Roboto', sans-serif;;
+
+// Styles
+body {
+  font-family: $body-font;
+  font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 { 
+  font-weight: normal;
+}
+
+.button { 
+  background-color: #65B48F; 
+  border: none;
+  color: white;
+  padding: 11px 29px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.button.secondary{
+  background-color:#fff;
+  color:#65B48F;
+  border:1px solid #65B48F; 
+}
+.select-box{
+    height: 37px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9px;
+}

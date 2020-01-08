@@ -1,0 +1,87 @@
+<!-- Side navigation -->
+<div class="sidenav">
+    <a href="" class="logo">My Portal</a>
+    <a href="#"><img  class="menuicon" src="/assets/icons/overview.svg" />Overview</a>
+    <a href="#"><img  class="menuicon" src="/assets/icons/envelope.svg" />Messages 
+      <span class="messagecounter">11+</span>
+    </a>
+    <a (click)="openSearch(true)"><img  class="menuicon" src="/assets/icons/search.svg" />Search</a>
+    <a href="#"><img  class="menuicon" src="/assets/icons/filter.svg" />Filter</a>
+    <a href="#"><img  class="menuicon" src="/assets/icons/history.svg" />History</a>
+    <a href="#"><img  class="menuicon" src="/assets/icons/avatar.svg" />My Account</a>
+
+    <a href="#" class="bottom-menu support"><img  class="menuicon" src="/assets/icons/support.svg" />Get Help</a>
+    <a href="#" class="bottom-menu"><img  class="menuicon" src="/assets/icons/logout.svg" />Sign Out</a>
+</div>
+ <form [formGroup]="filterForm">
+  <div class="sidesubnav" *ngIf="enableSearch">
+    <ul class="searchlist"  >
+      <li>
+        <label>Department</label>
+          
+          <select formControlName="filterDepartment"  class="select-box">  
+            <option *ngFor="let department of departmentList" value="{{department.value}}">{{ department.name }}</option>
+        </select>
+      </li>
+      <li>
+          <label>Roll Type</label>
+          <select formControlName="filterRollType"  class="select-box"> 
+            <option *ngFor="let roll of rollList" value="{{roll.value}}">{{ roll.name }}</option>
+        </select>
+      </li>
+      <li>
+          <label>Designation</label>
+          <select formControlName="filterDesignation"  class="select-box"> 
+            <option *ngFor="let designation of designationList" value="{{designation.value}}">{{ designation.name }}</option>
+        </select>
+      </li>
+      <li>
+          <label>Experience</label>
+        <select class="select-box" formControlName="filterExperience"> 
+            <option value="5"> 5 Years above</option>
+            <option value="1-2"> 1-2 Years</option>
+            <option value="3-5"> 3-5 Years</option>
+        </select>
+      </li> 
+      <li>
+          <label>Year Of Joining</label>
+
+        <select class="select-box" formControlName="filterJoiningYear">
+            <option value="2018"> 2018</option>
+            <option value="2017"> 2017</option>
+            <option value="2016"> 2016</option>
+            <option value="2015"> 2015</option>
+            <option value="2014"> 2014</option>
+            <option value="2013"> 2013</option>
+            <option value="2012"> 2012</option>
+        </select>
+      </li>
+      <li>
+          <label>Location</label>
+
+          <select formControlName="filterLocation"  class="select-box"> 
+            <option *ngFor="let location of locationList" value="{{location.value}}">{{ location.name }}</option>
+        </select>
+      </li>
+      <li>
+          <label>Team</label>
+
+          <select formControlName="filterTeam"  class="select-box"> 
+            <option *ngFor="let team  of teamList" value="{{team.value}}">{{ team.name }}</option>
+        </select>
+      </li>
+    
+    </ul>
+    <div class="clear-button">
+        <button class="button secondary" (click) = callParentFilter(false)>Clear</button>
+    </div>
+    <div class="submit-button">
+        <button class="button"  (click) = "callParentFilter(true)">Submit</button>
+    </div>
+    <div class="close-arrow">
+      <i class="icon-arrow-left"  (click)="openSearch(false)"></i>
+    </div>
+  </div>
+ 
+</form>
+

@@ -1,0 +1,72 @@
+<app-side-navigation (someEvent)="setContentStyle($event)" (applySideFilter) = "searchProfiles($event)"></app-side-navigation>
+<app-header (applyFilter) = "searchProfiles($event)"></app-header>
+
+<div class="container" [style.left.px]="leftStyle" [style.width.px]="widthStyle">
+    <div class="result-block" >
+            <span>{{this.totalResult}} Result Found</span> 
+            <div class="filter-result" *ngIf="this.totalResult"> 
+                <fieldset>
+                    <div class="item">
+                        <input type="checkbox" id="a" value = "Bangalore" (change)="filterBangalore($event)">
+                        <label for="a">Show only Bangalore employees</label>
+                    </div> 
+                </fieldset>
+            </div>
+    </div>
+    
+
+    <div class="flex-container">
+            <ul class="cards">
+                    <li class="cards__item" *ngFor="let profile of filterProfiles;let i = index ">
+                            <div class="card">
+                                    <div class="details">
+                                            <img src="/assets/profiles/{{profile.image}}" class="profile-img"/> 
+                                            <div class="div-title">
+                                                    <label class="name">{{profile.name}}</label><br>
+                                                    <span class="position">{{profile.title}}</span>
+                                            </div> 
+                                            <img src="/assets/icons/paper-plane.svg" class="send-icon"/>
+                                    
+                                    </div>
+                                    <div class="rating-block">
+                                        <span *ngIf="profile.rating">{{profile.rating}} Rating</span>
+                                        <div class="star-rating">
+                                                <fieldset class="rating" disabled>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="5" [checked]="profile.rating==='5'"/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="4.5" [checked]="profile.rating==='4.5'"/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="4" [checked]="profile.rating==='4'" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="3.5" [checked]="profile.rating==='3.5'" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="3"  [checked]="profile.rating==='3'" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="2.5" [checked]="profile.rating==='2.5'" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="2" [checked]="profile.rating==='2'" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="1.5" [checked]="profile.rating==='1.5'" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                        <input type="radio"  name="rating_{{i}}" [value]="1" [checked]="profile.rating==='1'" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                        <input type="radio"   name="rating_{{i}}" [value]="0.5" [checked]="profile.rating==='0.5'" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                    </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="experience-block">
+                                        <div class=""> Experience : <b>{{profile.experience}} Years</b> &nbsp;&nbsp; Date of Joining: <b>{{profile.joiningDate}}</b></div>
+                                    </div>
+                                    <div class="current-status">
+                                        Current team : <b>{{profile.currentTeam}}</b>
+                                    </div>
+                                    <div class="current-status">
+                                            Reporting Manager : <b>{{profile.reportManger}}</b>
+                                    </div>
+                                    <div class="contact">
+                                        <div class="phone">
+                                                <i class="icon-phone"></i>
+                                            {{profile.mobile}}
+                                        </div>
+                                        <div class="mail">
+                                            <img src="/assets/icons/gmail.svg" class="mail-icon"/>
+                                            {{profile.email}}
+                                        </div>
+                                    </div>
+                            </div>
+                    </li>
+            </ul>
+        
+    </div>
+</div>

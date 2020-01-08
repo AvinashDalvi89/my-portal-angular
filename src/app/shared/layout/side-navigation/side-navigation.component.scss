@@ -1,0 +1,135 @@
+.sidenav {
+	height: 100%;
+	width: 224px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	overflow-x: hidden;
+    padding-top: 20px;
+    border-right: 1px solid #ccc;
+	a {
+		padding: 14px;
+        padding-left: 34px;
+		text-decoration: none;
+		font-size: 18px;
+		color: #65B48F;
+		display: block;
+		&:hover {
+			color: #0e8e52;
+			background: #8bc34a4a;
+		}
+		.messagecounter{
+			background: red;
+			color: #fff;
+			font-size: 10px;
+			padding: 5px;
+			border-radius: 4px;
+			border: 1px solid red;
+			font-weight: bold;
+		}
+		.menuicon {
+			width: 21px;
+			height: 21px;
+			position: relative;
+			top: 4px;
+			margin-right: 10px;
+			fill: #fff;
+		}
+	}
+	.bottom-menu{
+		position: absolute;
+		bottom: 20px;
+		width: 200px;
+	}
+	.bottom-menu.support{
+		bottom: 64px;
+	}
+	.logo{
+		text-transform: uppercase;
+		font-size: 28px;
+		color: #444445;
+		font-weight: 500;
+	}
+}
+.sidesubnav{
+	height: 100%;
+	width: 293px;
+	position: fixed;
+	z-index: 1;
+	top: 74px;
+	left: 228px;
+	background-color: #fff;
+	overflow-x: hidden;
+    padding-top: 20px;
+	border-right: 1px solid #ccc;
+	.searchlist{
+		list-style: none;
+		padding: 3px;
+		li{
+			padding: 10px;
+			margin-bottom: 14px;
+			border-bottom: 1px solid #ccc;
+			label{
+			  font-size: 13px;
+			   color:#675e5e;
+			    position: absolute; 
+				left: .75rem;
+				cursor: text;
+				-webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+				transition: color .2s ease-out, -webkit-transform .2s ease-out;
+				transition: transform .2s ease-out, color .2s ease-out;
+				transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+				-webkit-transform-origin: 0% 100%;
+				transform-origin: 0% 100%; 
+				text-align: initial; 
+				-webkit-transform: translateY(12px);
+				transform: translateY(12px);
+				margin-top: -16px;
+			}
+			.select-box{
+				margin-top:12px;
+				border:0px;
+				font-size: 16px;
+				font-weight: 500;
+				color: #675e5e;
+				margin-left: -13px;
+				width: 100%;
+			}
+		}
+	}
+	.clear-button{
+		float: left;
+        margin-left: 27px;
+	}
+	.submit-button{
+		float: right;
+        margin-right: 27px;
+	}
+	.close-arrow{
+		position: fixed;
+        left: 208px;
+        top: 338px;
+		i{
+			background: #fff;
+			border: 1px solid #ccc;
+			border-radius: 50%;
+			padding: 7px;
+			padding-left: 9px;
+			padding-right: 10px;
+		}
+	}
+}
+.main {
+	margin-left: 160px;
+	padding: 0px 10px;
+}
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+		a {
+			font-size: 18px;
+		}
+	}
+}
